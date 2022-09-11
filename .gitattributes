@@ -1,2 +1,22 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+t = {}
+h=0
+
+for a in range(len(lst)- 2):
+
+
+  if (lst[a], lst[a+1]) not in t:
+    t[(lst[a], lst[a+1])]= [[lst[a+2], 1]]
+
+
+
+  else:
+    for r in range(len(t[(lst[a], lst[a+1])])):
+      
+      if t[(lst[a], lst[a+1])][r][0]== lst[a+2]:
+          t[(lst[a], lst[a+1])][r][1]+= 1
+          h=1
+    if h==0:
+      t[(lst[a], lst[a+1])].append([lst[a+2], 1]) 
+  
